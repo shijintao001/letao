@@ -38,7 +38,7 @@ $(function () {
                     },
                     stringLength:{
                         min:6,
-                        max:30,
+                        max:12,
                         message:'密码长度必须在6到30之间'
                     },
                     //专门用来提示信息
@@ -61,7 +61,8 @@ $(function () {
     $('form').on('success.form.bv',function (e) {
         //阻止浏览器默认行为
         e.preventDefault();
-        
+
+
         //发送ajax
         $.ajax({
             type:"post",
@@ -69,13 +70,14 @@ $(function () {
             data:$('form').serialize(),//表单序列化
             dataType:"json",
             success:function(info){
+                // console.log(info);
                 if(info.error === 1000){
                    $('form').data('bootstrapValidator').updateStatus("username","INVALID","callback")
                 }
                 if(info.error === 1001){
                     $("form").data("bootstrapValidator").updateStatus("password","INVALID","callback");
                 }
-                if(info.error){
+                if(info.success){
                     location.href = 'index.html'
                 }
             }
