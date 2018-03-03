@@ -31,8 +31,11 @@ a, a:link,a:visited,a:hover,a:active{
     position: absolute;
     top: 0;
     left: 0;
+    transition: all 1s;
 }
-
+.lt-aside.now{
+    left: -180px;
+}
 
 .lt-aside .brand a{
     display: block;
@@ -87,7 +90,11 @@ a, a:link,a:visited,a:hover,a:active{
     /*width: 100%;*/
     height: 100%;
     /*background-color: hotpink;*/
-    margin-left:180px;
+    padding-left:180px;
+    transition: all 1s;
+}
+.lt-main.now{
+    padding-left:0;
 }
 
 .lt-main .lt-header{
