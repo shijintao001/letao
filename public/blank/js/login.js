@@ -22,6 +22,10 @@ $(function () {
                         min:2,
                         max:20,
                         message:'用户名长度必须2到20之间'
+                    },
+                    //专门用来提示信息
+                    callback:{
+                        message:"用户名错误"
                     }
                 }
 
@@ -36,6 +40,10 @@ $(function () {
                         min:6,
                         max:30,
                         message:'密码长度必须在6到30之间'
+                    },
+                    //专门用来提示信息
+                    callback:{
+                        message:"密码错误"
                     }
                 }
             }
@@ -47,5 +55,37 @@ $(function () {
             validating: 'glyphicon glyphicon-refresh'
         }
 
-    })
+    });
+    
+    //2 给表单注册一个校验成功的事件，成功时候阻止表单默认提交 使用ajax
+    $('form').on('success.form.bv',function (e) {
+        //阻止浏览器默认行为
+        e.preventDefault();
+        
+        //发送ajax
+        $.ajax({
+            type:"post",
+            url:"/employee/employeeLogin",
+            data:$('form').serialize(),//表单序列化
+            dataType:"json",
+            success:function(info){
+                if(info.error === 1000){
+                   $('form').data('bootstrapValidator').updateStatus("username","INVALID","callback")
+                }
+                if(info.error === 1001){
+                    $("form").data("bootstrapValidator").updateStatus("password","INVALID","callback");
+                }
+                if(info.error){
+                    location.href = 'index.html'
+                }
+            }
+        })
+    });
+
+
+    //3 重置表单 清楚所有样式
+    $("[type='reset']").on('click',function () {
+        $('form').data('bootstrapValidator').resetForm(true);
+    });
+
 });
