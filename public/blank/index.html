@@ -2,10 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>乐淘首页管理系统</title>
-    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <title>首页</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
+<!-- 左侧 -->
+<div class="lt-aside">
+    <div class="brand">
+        <a href="index.html">
+            乐淘商城
+        </a>
+    </div>
+    <div class="user">
+        <img src="images/default.jpg" alt="">
+        <p>超级管理员</p>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="user.html" class="now">
+                    <span class="glyphicon glyphicon-user"></span>
+                    用户管理
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="glyphicon glyphicon-list"></span>
+                    分类管理
+                </a>
+                
+                
+                <div class="second" style="display: none;">
+                    <a href="first.html">一级分类</a>
+                    <a href="second.html">二级分类</a>
+                </div>
+            </li>
+            <li>
+                <a href="user.html">
+                    <span class="glyphicon glyphicon-tags"></span>
+                    商品管理
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 右侧-->
+<div class="lt-main">
+    <div class="lt-header">
+        <a href="javascript:;" class="pull-left icon-menu"><span class="glyphicon glyphicon-align-justify"></span></a>
+        <a href="javascript:;" class="pull-right  icon-logout "><span class="glyphicon glyphicon-log-out"></span></a>
+    </div>
+
+    <div class="container-fluid">
+        <ol class="breadcrumb">
+            <li><a href="#">乐淘管理系统</a></li>
+            <li class="active">首页</li>
+        </ol>
+
+        <!--内容 -->
+        <div class="lt-content"> </div>
+    </div>
+</div>
+
+<!-- 路径导航 -->
 
 </body>
 </html>
+<script src="lib/jquery-1.12.4.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
