@@ -23,7 +23,7 @@
     <div class="nav">
         <ul>
             <li>
-                <a href="user.html"  class="now">
+                <a href="user.html" class="now">
                     <span class="glyphicon glyphicon-user"></span>
                     用户管理
                 </a>
@@ -64,7 +64,29 @@
         </ol>
 
         <!--内容 -->
-        <div class="lt-content"> </div>
+        <div class="lt-content">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th width="10%">序号</th>
+                    <th width="30%">用户名</th>
+                    <th width="30%">手机号</th>
+                    <th width="20%">状态</th>
+                    <th width="10%">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!- 表格  挖个坑-->
+                </tbody>
+            </table>
+
+
+            <!-- 分页标签 只需一个ul 指定id -->
+            <div class="text-right">
+            <ul id="paginator"></ul>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -88,11 +110,56 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
+<!-- 点击启用/禁用 弹出的模态框 -->
+<div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span> 你确定要执行此操作吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary btn_confirm">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- 表格的模版 -->
+<script  type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.username}}</td>
+        <td>{{v.mobile}}</td>
+        <td>
+            {{v.isDelete ===1 ? '正常':'禁用'}}
+        </td>
+        <td data-id="{{v.id}}">
+            {{if v.isDelete === 0}}
+            <button class="btn btn-success btn-sm ">启用</button>
+            {{ else }}
+            <button class="btn btn-danger btn-sm">禁用</button>
+            {{/if}}
+        </td>
+    </tr>
+    {{/each}}
+</script>
+
 </body>
 </html>
 <script src="lib/jquery-1.12.4.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!-- 分页插件-->
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!-- 模版引擎插件-->
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/common.js"></script>
-<script src="js/login.js"></script>
+<script src="js/user.js"></script>
