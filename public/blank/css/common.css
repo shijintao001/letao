@@ -109,3 +109,11 @@ a, a:link,a:visited,a:hover,a:active{
     font-size:18px;
 }
 
+
+
+/*echarts*/
+.lt-content .charts-1,
+.charts-2{
+    width: 45%;
+    height: 400px;
+}
