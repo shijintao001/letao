@@ -1,23 +1,6 @@
 @charset "UTF-8";
 
-.lt_search {
-    padding: 10px;
-    position: relative;
-}
-.lt_search input{
-    font-size:12px;
-    height: 34px;
-    border: 1px solid #007aff;
-    border-radius: 5px;
-    padding-left:10px;
-    margin: 0;
-}
-.lt_search .search_btn {
-    position: absolute;
-    right: 10px;
-    top:10px;
-    border-radius: 0 5px 5px 0;
-}
+
 
 
 .lt_history {
