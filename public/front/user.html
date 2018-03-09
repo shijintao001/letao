@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>乐淘商城-登录</title>
+    <title>乐淘商城-会员中心</title>
     <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
 <div class="lt_container">
@@ -17,29 +17,29 @@
         <a href="index.html" class="icon_left">
             <span class="mui-icon mui-icon-arrowleft"></span>
         </a>
-        <h4>登录</h4>
+        <h4>会员中心</h4>
 
     </div>
 
     <!-- 内容区-->
     <div class="lt_main">
-
-        <form class="mui-input-group">
-            <div class="mui-input-row">
-                <label>用户名</label>
-                <input type="text" name="username" class="mui-input-clear" placeholder="请输入用户名">
-            </div>
-            <div class="mui-input-row">
-                <label>密码</label>
-                <input type="password" name="password" class="mui-input-password" placeholder="请输入密码">
-            </div>
-            <div class="mui-button-row">
-                <button type="button" class="mui-btn mui-btn-primary btn_login" >登录</button>
-                <button type="button" class="mui-btn mui-btn-danger" >重置</button>
-            </div>
-
-        </form>
-        <a href="register.html" class="mui-pull-right" style="font-size: 12px">免费注册</a>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media userinfo">
+              <!-- 模版-->
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right"> 账户与安全</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href="cart.html" class="mui-navigate-right">我的购物车</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">收货地址管理</a>
+            </li>
+        </ul>
+        <div class="logout_wrapper">
+        <button class="mui-btn mui-btn-default btn_logout" >立即退出</button>
+        </div>
     </div>
     <!-- 底部 -->
     <footer class="lt_footer">
@@ -74,7 +74,17 @@
 </div>
 </body>
 </html>
+<script type="text/html" id="tpl">
+    <a href="javascript:;" class="mui-navigate-right">
+        <img class="mui-media-object mui-pull-left" src="images/user.jpg">
+        <div class="mui-media-body">
+            {{username}}
+            <p class='mui-ellipsis'>{{mobile}}</p>
+        </div>
+    </a>
+</script>
 <script src="lib/mui/js/mui.min.js"></script>
 <script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/login.js"></script>
+<script src="js/user.js"></script>
