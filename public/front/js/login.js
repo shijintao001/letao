@@ -31,7 +31,9 @@ $(function () {
                     // 判断 如果有reUrl 参数 说明需要跳回去 reUrl对应地址去
                     //如果没有默认去 user.html
                    if(location.search.indexOf("retUrl")!=-1){
-                       history.go(-1);
+                       // 跳到指定retUrl指定地址
+                       // history.go(-1);
+                       location.href = location.search.replace("?retUrl=","");
                    }else{
                        location.href = "user.html";
                    }

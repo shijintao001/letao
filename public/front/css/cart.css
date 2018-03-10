@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.lt_container{
+    padding-bottom:85px;
+}
+.cart_img{
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+.mui-table-cell {
+    /*只有这样才能继承父盒子宽度*/
+    display: block;
+}
+.car_info{
+    /*background-color: gold;*/
+    overflow: hidden;
+    /*height: 60px;*/
+    padding-left:10px;
+}
+.car_info .proName {
+    color: #000;
+    margin-bottom: 5px;
+    height: 42px;
+}
+.car_info .price {
+    color:red;
+}
+.car_info .oldPrice {
+    text-decoration: line-through;
+}
+
+.ck{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+.lt_order {
+    position: absolute;
+    height: 30px;
+    bottom: 55px;
+    width: 100%;
+    background-color: #eee;
+    z-index:999;
+    border-top:1px solid #ccc;
+    padding-left:10px;
+    color: red;
+    font-size:12px;
+    line-height: 30px;
+
+}
+.lt_order a {
+    background-color: red;
+    color: #fff;
+    padding:0 10px ;
+}
+.lt_edit_size {
+    text-align: left;
+}
+.lt_edit_size span{
+    line-height: 30px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #f5f5f5;
+    font-size:12px;
+
+}
+.lt_edit_size span.now{
+    background-color: #069;
+}
+.lt_edit_num {
+    text-align: left;
+}
